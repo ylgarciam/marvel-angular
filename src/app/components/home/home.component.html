@@ -1,0 +1,27 @@
+<ul>   
+    <li *ngFor="let elementoMarvel of listaMarvel">
+        {{elementoMarvel.name}}
+       
+        <button type="button" class="btn btn-info" (click)="detalle(elementoMarvel.id)">Detalle</button>
+    </li>
+   
+</ul>
+<div class="modal" tabindex="-1" id="modalCharacter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalle Character Marvel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cierraDetalle()"></button>
+        </div>
+        <div class="modal-body" *ngIf="detalleMarvel">
+          <p> Id: {{detalleMarvel.id}}</p>
+          <p> Nombre: {{detalleMarvel.name}}</p>
+          <p> Descripcion: {{detalleMarvel.description}}</p>
+          <p> Fecha de Modificacion: {{detalleMarvel.modified}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cierraDetalle()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
